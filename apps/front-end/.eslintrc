@@ -1,0 +1,76 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@emotion",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@next/next/no-img-element": 0,
+    "@next/next/no-server-import-in-page": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ]
+  }
+}

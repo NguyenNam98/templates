@@ -1,0 +1,39 @@
+{
+  "name": "@devbridge/api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "dev": "npx rimraf dist && nest start -w",
+    "lint": "eslint",
+    "test": "jest",
+    "aws": "node dist/main",
+    "build:aws": "nest build --prod"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "@devbridge/tsconfig": "workspace:*",
+    "@nestjs/axios": "^0.0.6",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.1.1",
+    "@nestjs/platform-express": "^10.1.2",
+    "@nestjs/swagger": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "http-proxy-middleware": "^2.0.3",
+    "joi": "^17.4.2",
+    "js-yaml": "^4.1.0",
+    "qs": "^6.10.3",
+    "qs-iconv": "^1.0.4"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.2.1",
+    "@nestjs/schematics": "^8.0.7"
+  }
+}

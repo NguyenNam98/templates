@@ -1,0 +1,62 @@
+{
+  "name": "@devbridge/main-api",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "dev": "npx rimraf dist && nest start -w",
+    "lint": "eslint",
+    "test": "jest",
+    "aws": "node dist/main",
+    "build:aws": "nest build --prod",
+    "test:pdf_to_img": "node tests/pdf_to_img/index.mjs",
+    "test:img_to_json": "node tests/img_to_json/index.mjs",
+    "test:chat": "node tests/chat/index.mjs"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "@devbridge/entities": "workspace:*",
+    "@devbridge/tsconfig": "workspace:*",
+    "@aws-sdk/client-s3": "^3.712.0",
+    "@aws-sdk/lib-storage": "^3.712.0",
+    "@nestjs/axios": "^0.0.6",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.3.3",
+    "@nestjs/event-emitter": "^2.1.1",
+    "@nestjs/platform-express": "^10.1.2",
+    "@nestjs/swagger": "^7.0.1",
+    "@nestjs/throttler": "^2.0.1",
+    "@nestjs/typeorm": "^8.0.3",
+    "aws-jwt-verify": "^4.0.1",
+    "aws-sdk": "^2.1673.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "crypto-js": "^4.2.0",
+    "generate-password": "^1.7.1",
+    "handlebars": "^4.7.8",
+    "ioredis": "^5.4.1",
+    "jwt-decode": "^4.0.0",
+    "lodash": "^4.17.21",
+    "mime-types": "^2.1.35",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.45",
+    "nodemailer": "^6.10.0",
+    "swagger-ui-express": "^4.3.0",
+    "typeorm": "^0.3.0-rc.20"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.2.1",
+    "@nestjs/schematics": "^8.0.7",
+    "@types/lodash": "^4.17.7",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "@types/nodemailer": "^6.4.17"
+  }
+}

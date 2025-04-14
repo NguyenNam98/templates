@@ -1,0 +1,8 @@
+serviceConfVersion:
+  develop: 1
+  staging: 1
+  production: 1
+commonConfVersion:
+  develop: 2
+  staging: 2
+  production: 2

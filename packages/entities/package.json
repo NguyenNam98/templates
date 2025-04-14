@@ -1,0 +1,21 @@
+{
+  "name": "@devbridge/entities",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.1.2",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm build"
+  },
+  "devDependencies": {
+    "@devbridge/tsconfig": "workspace:*"
+  },
+  "peerDependencies": {
+    "typeorm": "^0.3.0-rc.20"
+  }
+}

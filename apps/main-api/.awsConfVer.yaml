@@ -1,0 +1,4 @@
+serviceConfVersion:
+  develop: 3
+  staging: 3
+  production: 3
