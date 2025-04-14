@@ -10,7 +10,6 @@ import * as express from 'express'
 import * as cookieParser from 'cookie-parser'
 import * as process from 'process'
 import { json, urlencoded } from 'express'
-import { setEnvVariables } from './app.config'
 
 // const isLocal = process.env.ENV === 'develop';
 const PORT = 7001
@@ -29,7 +28,7 @@ async function createNestServer(serverExpress: express.Express) {
       logger,
     },
   )
-  await setEnvVariables()
+  // set env
   app.use(
     morgan(
       ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :response-time ms :res[content-length] ":referrer" ":user-agent" ',

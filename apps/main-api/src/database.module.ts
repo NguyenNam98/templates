@@ -2,7 +2,6 @@ import { DynamicModule } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { DATABASE_NAMES, ENV_LOCAL } from '@/app.constant'
 import { map, find } from 'lodash'
-import { setEnvVariables } from './app.config'
 
 export type TDatabase = {
   DB: string
@@ -12,7 +11,6 @@ export type TDatabase = {
 export class DatabaseModule {
   public static async forRoot(): Promise<DynamicModule> {
     const databases: string[] = map(Object.values(DATABASE_NAMES), 'DB')
-    await setEnvVariables()
     const modules = databases.map((key) => {
       const connection = find(Object.values(DATABASE_NAMES), { DB: key })
 

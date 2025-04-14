@@ -14,7 +14,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as cookieParser from 'cookie-parser'
 import { json, urlencoded } from 'express'
-import { setEnvVariables } from './app.config'
 
 const PORT = 7003
 function getDirectories(srcpath) {
@@ -56,7 +55,7 @@ async function createNestServer(serverExpress: express.Express) {
   const logger: any[] = ['error', 'warn', 'debug'].concat(
     process.env.ENV != 'production' ? ['log'] : [],
   )
-  await setEnvVariables()
+  //set env
   const adapter = new ExpressAdapter(serverExpress)
   const app = await NestFactory.create<NestExpressApplication>(
     AppModule.forRoot(await dynamicImport('module')),
